@@ -22,7 +22,8 @@ def product_detail(request, pk):
 
 @api_view(['GET'])
 def order_list(request):
-    orders = Order.objects.all()
+    #added prefetch_related to optimize the query; optimized using silk package
+    orders = Order.objects.prefetch_related('items__product', 'user')
     serializer = OrderSerializer(orders, many=True)
     return Response(serializer.data)
 
