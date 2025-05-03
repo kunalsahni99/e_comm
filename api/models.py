@@ -27,7 +27,7 @@ class Order(models.Model):
         CANCELLED = 'Cancelled'
         DELIVERED = 'Delivered'
 
-    orderID = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    order_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
@@ -41,7 +41,7 @@ class Order(models.Model):
         return f"Order {self.orderID} - {self.user.username}"
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
