@@ -4,28 +4,35 @@ from django.shortcuts import get_object_or_404, render
 from api.serializers import ProductSerializer, OrderSerializer, ProductInfoSerializer
 from api.models import Product, Order, OrderItem
 from rest_framework.decorators import api_view
+from rest_framework import generics
 
 def home(request):
     return render(request, 'base.html')
 
-@api_view(['GET'])
-def product_list(request):
-    products = Product.objects.all()
-    serializer = ProductSerializer(products, many=True)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def product_list(request):
+#     products = Product.objects.all()
+#     serializer = ProductSerializer(products, many=True)
+#     return Response(serializer.data)
 
-@api_view(['GET'])
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    serializer = ProductSerializer(product)
-    return Response(serializer.data)
+class ProductListAPIView(generics.ListAPIView):
+    queryset = Product.objects.filter(stock__gt=0)
+    serializer_class = ProductSerializer
 
-@api_view(['GET'])
-def order_list(request):
-    #added prefetch_related to optimize the query; optimized using silk package
-    orders = Order.objects.prefetch_related('items__product', 'user')
-    serializer = OrderSerializer(orders, many=True)
-    return Response(serializer.data)
+class ProductDetailAPIView(generics.RetrieveAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+# @api_view(['GET'])
+# def order_list(request):
+#     #added prefetch_related to optimize the query; optimized using silk package
+#     orders = Order.objects.prefetch_related('items__product', 'user')
+#     serializer = OrderSerializer(orders, many=True)
+#     return Response(serializer.data)
+
+class OrderListAPIView(generics.ListAPIView):
+    queryset = Order.objects.prefetch_related('items__product', 'user')
+    serializer_class = OrderSerializer
 
 @api_view(['GET'])
 def product_info(request):

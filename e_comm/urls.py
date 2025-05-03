@@ -21,9 +21,9 @@ from api.views import *
 urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
-    path('products/', product_list),
-    path('products/<int:pk>', product_detail),
-    path('orders/', order_list),
+    path('products/', ProductListAPIView.as_view()),
+    path('products/<int:pk>', ProductDetailAPIView.as_view()),
+    path('orders/', OrderListAPIView.as_view()),
     path('products/info/', product_info),
     path('silk/', include('silk.urls', namespace='silk'))
 ]
