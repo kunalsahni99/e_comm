@@ -38,7 +38,7 @@ class Order(models.Model):
     products = models.ManyToManyField(Product, through='OrderItem', related_name='orders')
 
     def __str__(self):
-        return f"Order {self.orderID} - {self.user.username}"
+        return f"Order {self.order_id} - {self.user.username}"
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
@@ -50,5 +50,5 @@ class OrderItem(models.Model):
         return self.product.price * self.quantity
 
     def __str__(self):
-        return f"{self.product.name} x {self.quantity}) in {self.order.orderID}"
+        return f"{self.product.name} x {self.quantity}) in {self.order.order_id}"
     

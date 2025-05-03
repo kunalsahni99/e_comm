@@ -25,5 +25,6 @@ urlpatterns = [
     path('products/<int:pk>', ProductDetailAPIView.as_view()),
     path('orders/', OrderListAPIView.as_view()),
     path('products/info/', product_info),
-    path('silk/', include('silk.urls', namespace='silk'))
+    path('user-orders/', UserOrderListAPIView.as_view()),
+    path('silk/', include('silk.urls', namespace='silk')),
 ]
