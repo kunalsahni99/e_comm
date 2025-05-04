@@ -17,8 +17,8 @@ def home(request):
 #     serializer = ProductSerializer(products, many=True)
 #     return Response(serializer.data)
 
-class ProductListAPIView(generics.ListAPIView):
-    queryset = Product.objects.filter(stock__gt=0)
+class ProductListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
