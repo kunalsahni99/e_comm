@@ -57,7 +57,6 @@ class UserOrderListAPIView(generics.ListAPIView):
 #     return Response(serializer.data)
 
 class ProductInfoAPIView(APIView):
-
     def get(self, request):
         products = Product.objects.all()
         serializer = ProductInfoSerializer({
