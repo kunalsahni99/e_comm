@@ -4,10 +4,26 @@ GET http://localhost:8000/products/ HTTP/1.1
 
 POST http://localhost:8000/products/ HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NDI2OTU5LCJpYXQiOjE3NDc0MjY2NTksImp0aSI6IjdmNmVkZjBjOTkwNTRhNmNiZmJkNzQ5NWQ1ZmU2OWE0IiwidXNlcl9pZCI6NH0.IcB1QRh9EuCTkBqOgW2A_48bAJv4Q3gQKY35_hY0lrg
 
 {
-    "name": "Television",
-    "price": "300.00",
-    "stock": 14,
-    "desc": "An amazing new TV"
+    "name": "Smart watch",
+    "price": "100",
+    "stock": 11,
+    "desc": "An amazing new smart watch"
 }
+
+###
+
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "kunal",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:8000/user-orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NDI3MTY2LCJpYXQiOjE3NDc0MjY4NjYsImp0aSI6ImZhNDhjZDQzZGE1OTQ1OGNhMDg3NTYwNmRmOTEzOThmIiwidXNlcl9pZCI6NH0.J4PUFfcyJplA22KgUtITd_zM3jEN3BOvS9-TSVH_JoQ
