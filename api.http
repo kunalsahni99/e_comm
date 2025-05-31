@@ -2,9 +2,30 @@ GET http://localhost:8000/products/ HTTP/1.1
 
 ###
 
+GET http://localhost:8000/products/2/ HTTP/1.1
+
+###
+
+DELETE http://localhost:8000/products/2/ HTTP/1.1
+
+###
+
+PUT http://localhost:8000/products/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4Njk1MDA1LCJpYXQiOjE3NDg2OTQ3MDUsImp0aSI6IjBmZWE1MmFjZDhiYTQ4OGM4OTI2ZmQzOTVhNjM1ZTA2IiwidXNlcl9pZCI6Mn0.skBmtHSfSsX1W8drVL5rf8DdZ5z_k3Qw6FpGjuqmTI0
+
+{
+    "name": "Smart watch",
+    "price": "100",
+    "stock": 20,
+    "desc": "An amazing new smart watch"
+}
+
+###
+
 POST http://localhost:8000/products/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NDI2OTU5LCJpYXQiOjE3NDc0MjY2NTksImp0aSI6IjdmNmVkZjBjOTkwNTRhNmNiZmJkNzQ5NWQ1ZmU2OWE0IiwidXNlcl9pZCI6NH0.IcB1QRh9EuCTkBqOgW2A_48bAJv4Q3gQKY35_hY0lrg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4Njk1MDA1LCJpYXQiOjE3NDg2OTQ3MDUsImp0aSI6IjBmZWE1MmFjZDhiYTQ4OGM4OTI2ZmQzOTVhNjM1ZTA2IiwidXNlcl9pZCI6Mn0.skBmtHSfSsX1W8drVL5rf8DdZ5z_k3Qw6FpGjuqmTI0
 
 {
     "name": "Smart watch",
@@ -19,8 +40,8 @@ POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "kunal",
-    "password": "123456"
+    "username": "q.naal",
+    "password": "Leomessi10@#"
 }
 
 ###
