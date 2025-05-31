@@ -25,13 +25,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 POST http://localhost:8000/products/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4Njk1MDA1LCJpYXQiOjE3NDg2OTQ3MDUsImp0aSI6IjBmZWE1MmFjZDhiYTQ4OGM4OTI2ZmQzOTVhNjM1ZTA2IiwidXNlcl9pZCI6Mn0.skBmtHSfSsX1W8drVL5rf8DdZ5z_k3Qw6FpGjuqmTI0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NzA1NDA1LCJpYXQiOjE3NDg3MDUxMDUsImp0aSI6IjhkYWQxNzVhMjljZTQ4ZTY5MzFhYjg3ZTRlMTc0ZGFiIiwidXNlcl9pZCI6Mn0.rk77EIqvxoZ3iPf1EQtQikk9PWbCuSAHOEwBD_rcFOQ
 
 {
-    "name": "Smart watch",
-    "price": "100",
-    "stock": 11,
-    "desc": "An amazing new smart watch"
+    "name": "Amazing lamp",
+    "price": "75.99",
+    "stock": 0,
+    "desc": "An amazing new lamp"
+
 }
 
 ###
