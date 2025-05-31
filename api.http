@@ -26,4 +26,13 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/user-orders/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NDI3MTY2LCJpYXQiOjE3NDc0MjY4NjYsImp0aSI6ImZhNDhjZDQzZGE1OTQ1OGNhMDg3NTYwNmRmOTEzOThmIiwidXNlcl9pZCI6NH0.J4PUFfcyJplA22KgUtITd_zM3jEN3BOvS9-TSVH_JoQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NjcwODc4LCJpYXQiOjE3NDg2NzA1MjQsImp0aSI6ImZkYWNjOGRmNWExOTQ3NDk4ZjQ5YzgwNjViMzExMjI1IiwidXNlcl9pZCI6NH0.5ATthrvVle3Npg-LJbQMMgo4Yqs4frrZCCV5M432a2M
+
+###
+
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODc1NjkyNCwiaWF0IjoxNzQ4NjcwNTI0LCJqdGkiOiJhYzg4Y2QzNzQ2MTI0ZTVmOTFiZDU1Nzg0MzUzMDU5NCIsInVzZXJfaWQiOjR9.ZStumF6y7SW7i4ZiwLyH6NO_bGlr1rpJ_RLoGt2yToI"
+}
