@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from .models import Product, Order, OrderItem, User
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('username',)
+# class UserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ('username',)
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,9 +36,10 @@ class OrderItemSerializer(serializers.ModelSerializer):
         )
 
 class OrderSerializer(serializers.ModelSerializer):
+    order_id = serializers.UUIDField(read_only=True)
     items = OrderItemSerializer(many=True, read_only=True)
     total_price = serializers.SerializerMethodField()
-    user = UserSerializer()
+    # user = UserSerializer()
 
     def get_total_price(self, obj):
         order_items = obj.items.all()

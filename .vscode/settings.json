@@ -4,6 +4,7 @@
         "pagenum",
         "redoc",
         "Redoc",
-        "simplejwt"
+        "simplejwt",
+        "viewsets"
     ]
 }
