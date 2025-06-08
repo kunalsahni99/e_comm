@@ -7,12 +7,13 @@ from rest_framework.decorators import api_view
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
-from api.filters import ProductFilter, InStockFilterBackend
+from api.filters import OrderFilter, ProductFilter, InStockFilterBackend
 
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import action
 
 def home(request):
     return render(request, 'base.html')
@@ -93,8 +94,22 @@ class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 class OrderViewSet(ModelViewSet):
     queryset = Order.objects.prefetch_related('items__product')
     serializer_class = OrderSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     pagination_class = None
+
+    filterset_class = OrderFilter
+    filter_backends = [DjangoFilterBackend]
+
+    @action(
+        detail=False,
+        methods=['GET'],
+        url_path='user-orders'
+    )
+    def user_orders(self, request):
+        orders = self.get_queryset().filter(user=request.user)
+        serializer = self.get_serializer(orders, many=True)
+        return Response(serializer.data)
+    
 
 class ProductInfoAPIView(APIView):
     def get(self, request):
