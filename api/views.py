@@ -17,6 +17,7 @@ from django.utils.decorators import method_decorator
 from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
+from rest_framework.throttling import ScopedRateThrottle
 
 def home(request):
     return render(request, 'base.html')
@@ -29,6 +30,8 @@ def home(request):
 
 class ProductListCreateAPIView(generics.ListCreateAPIView):
     queryset = Product.objects.order_by('pk')
+    throttle_scope = 'products'
+    throttle_classes = [ScopedRateThrottle]
     serializer_class = ProductSerializer
     filterset_class = ProductFilter
     filter_backends = [
@@ -105,6 +108,7 @@ class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 class OrderViewSet(ModelViewSet):
     queryset = Order.objects.prefetch_related('items__product')
+    throttle_scope = 'orders'
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated]
     pagination_class = None
