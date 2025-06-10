@@ -41,14 +41,14 @@ POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "kunal",
-    "password": "Leomessi10@#"
+    "username": "admin",
+    "password": "test"
 }
 
 ###
 
 GET http://localhost:8000/user-orders/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NjcwODc4LCJpYXQiOjE3NDg2NzA1MjQsImp0aSI6ImZkYWNjOGRmNWExOTQ3NDk4ZjQ5YzgwNjViMzExMjI1IiwidXNlcl9pZCI6NH0.5ATthrvVle3Npg-LJbQMMgo4Yqs4frrZCCV5M432a2M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTcyNjY4LCJpYXQiOjE3NDk1NzE3NjgsImp0aSI6IjRmNjRjMDU1OWIzYzQyY2Y5NTQ1NGY2OTkzNjYyN2UyIiwidXNlcl9pZCI6MX0.4fefAt1TKwvJYm9ovCxQP56T3MGyctiMROI6gGyNTgo
 
 ###
 
@@ -56,13 +56,13 @@ POST http://localhost:8000/api/token/refresh/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0OTQ3ODA4MywiaWF0IjoxNzQ5MzkxNjgzLCJqdGkiOiIyNWEyNzRmM2ZjOTI0YTlmYjc1ODMxM2I1ZmFjMzBjMSIsInVzZXJfaWQiOjZ9.gXMRF1AQipFRU662iRUAZ3BR1nyV1oltA5n7v74pCAM"
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0OTY1ODA5MywiaWF0IjoxNzQ5NTcxNjkzLCJqdGkiOiJiNjRlMzgyYmFiM2Y0MGJmOTcxZWY0MDdiODg1Yjg1YSIsInVzZXJfaWQiOjZ9.R5PV1sAe-ustDgCkFpEwF3GNhdkTflhlOJbuAmBhL_A"
 }
 
 ###
 
 GET http://localhost:8000/orders/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5Mzg3MjY5LCJpYXQiOjE3NDkzODY5NjksImp0aSI6IjljZjMxMzBhZjM2ODQxY2VhOTYxN2E1NWJmZjdlZmYyIiwidXNlcl9pZCI6Nn0.lF7C186Xea0uuNm9XqQur5xnKUCOPK-qd_uOzmzMJ6A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTcyNjY4LCJpYXQiOjE3NDk1NzE3NjgsImp0aSI6IjRmNjRjMDU1OWIzYzQyY2Y5NTQ1NGY2OTkzNjYyN2UyIiwidXNlcl9pZCI6MX0.4fefAt1TKwvJYm9ovCxQP56T3MGyctiMROI6gGyNTgo
 
 ###
 
