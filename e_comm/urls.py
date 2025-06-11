@@ -29,7 +29,7 @@ urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
     path('products/', ProductListCreateAPIView.as_view()),
-    path('products/<int:pk>/', ProductDetailAPIView.as_view()),
+    path('products/<int:pk>/', ProductDetailAPIView.as_view(), name='product-detail'),
     path('products/info/', ProductInfoAPIView.as_view()),
     path('silk/', include('silk.urls', namespace='silk')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
