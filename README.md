@@ -9,3 +9,6 @@ redis-cli -n 1
 
 4. To flush the Redis cache:
 flushdb
+
+5. To start the celery worker:
+celery -A <Name_of_the_app> worker --loglevel=INFO

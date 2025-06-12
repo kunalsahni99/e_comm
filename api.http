@@ -41,8 +41,8 @@ POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "password": "test"
+    "username": "q.naal",
+    "password": "Leomessi10@#"
 }
 
 ###
@@ -68,18 +68,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 POST http://localhost:8000/orders/ HTTP/1.1 
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5MzkzODkxLCJpYXQiOjE3NDkzOTE2ODMsImp0aSI6ImM5MDJhODM0MDFmNzQ3YTViY2JmYzEyM2UyOGUxNWZlIiwidXNlcl9pZCI6Nn0.12yulW6bhnVej8CJa8abQ1R_7u1nrrWl4zM8F-K0AXk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NzUzMjg3LCJpYXQiOjE3NDk3NTIzODcsImp0aSI6ImIwYjQ0MmNmZmQxNjQ0YTVhZDNjYTViNWQzMDU3ZTdhIiwidXNlcl9pZCI6Mn0.fXXt1eUHLjDOu5bfjo5C4JwwWkA9xFeJzVHrYogpgJA
 
 {
     "status": "Pending",
     "items": [
         {
-            "product": 4,
-            "quantity": 7
+            "product": 3,
+            "quantity": 5
         },
         {
-            "product": 5,
-            "quantity": 1
+            "product": 2,
+            "quantity": 10
         }
     ]
 }
